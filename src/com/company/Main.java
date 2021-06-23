@@ -19,6 +19,8 @@ public class Main {
         list.add("andrey");
         list.add("anna");
 
+        System.out.println();
+
         list2.add("vasiliy");
         list2.add("anastasiya");
         list2.add("ivan");
