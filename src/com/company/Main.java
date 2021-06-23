@@ -19,8 +19,6 @@ public class Main {
         list.add("andrey");
         list.add("anna");
 
-        System.out.println();
-
         list2.add("vasiliy");
         list2.add("anastasiya");
         list2.add("ivan");
@@ -34,6 +32,8 @@ public class Main {
         for (String s : checkList) {
             System.out.println(s);
         }
+
+        System.out.println();
 
         for (String s : set) {
             System.out.println(s);
