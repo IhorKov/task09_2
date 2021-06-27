@@ -8,7 +8,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<>();
         List<String> list2 = new ArrayList<>();
 
         list.add("vasiliy");
@@ -29,37 +29,32 @@ public class Main {
         Set<String> set = checkValue(list);
         List<String> checkList = checkValueList(list2);
 
-        for (String s : checkList) {
+        for (String s : set) {
             System.out.println(s);
         }
 
         System.out.println();
 
-        for (String s : set) {
+        for (String s : checkList) {
             System.out.println(s);
         }
     }
 
-    public static Set<String> checkValue(ArrayList<String> list) {
-        Set<String> copySet = new HashSet<>(list);
-        return copySet;
+    public static Set<String> checkValue(List<String> list) {
+        return new HashSet<>(list);
     }
 
     public static List<String> checkValueList(List<String> list) {
-        List<String> copy = new ArrayList<>(list);
+        List<String> result = new ArrayList<>();
 
-        for (int i = 0; i < list.size() - 1; i++){
-            String s = list.get(i);
-
-            for (int k = i + 1; k < list.size();) {
-                if (s == list.get(k)) {
-                    list.remove(k);
-                    continue;
-                }
-                k++;
+        for (int i = 0; i < list.size(); i++){
+            if(result.contains(list.get(i))){
+                continue;
             }
+            result.add(list.get(i));
         }
-        return list;
+
+        return result;
     }
 
 }
